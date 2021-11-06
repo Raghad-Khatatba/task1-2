@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM objects.</title>
+<style>
+.myDiv {
+  border: 3px outset black;
+ background-color: #f5f6f5;
+  text-align: left;
+  padding-left: 10px;
+  height: 700px;
+  margin : 1px 60px 1px;
+}
+button{
+    border: 2px outset black;
+    height: 40px;
+}
+p{
+    font-size: 120%;
+}
+</style>
+</head>
+<body>
+<div class="myDiv">
+<br>
+<h2>1. selects all paragraphs on the webpage and capitalizes their text</h2>
+<p>paragraph 1</p>
+<p>paragraph 2</p>
+<p>paragraph 3</p>
+<p>paragraph 4</p>
+<button onclick=" myFunction()">capitalizes the text in all paragraphs</button>
+
+<h2>2. selects all images on the webpage and Change their src attribute</h2>
+<div style="display:flex;">
+<div style="margin: 20px;">
+<img id="web"src="web2.jpg"alt="web"width="180px"height="180px">
+</div>
+<div style="margin: 20px;">
+<img src="web4.jpg"alt="web"width="180px"height="180px">
+</div>
+<div style="margin: 20px;">
+<img src="web7.jpg"alt="web"width="180px"height="180px">
+</div>
+</div>
+<button id="box-btn" onclick="openBox()">Click me to Change img!</button>
+</div>
+<script> 
+//B.addEventListener("click", openBox);
+function openBox() {
+    let B = document.querySelectorAll("img");
+    for(let i=0;i<B.length;i++){
+ B[i].src = "https://media.giphy.com/media/jaqvaWqpKfImQ/giphy.gif"; // 2. Change the box image's src attribute!
+    }
+}
+function myFunction() {
+let x = document.querySelectorAll("p");
+for(let j=0;j<x.length;j++){
+x[j].textContent=x[j].textContent.toUpperCase();
+    }
+} 
+</script>
+</body>
+</html>
